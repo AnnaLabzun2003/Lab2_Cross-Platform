@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Лабораторна робота №1
+    </ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-title>
+      студентки групи КН-32
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+
+    <ion-title>
+      Лабзун Анни Михайлівни
+    </ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-title>
+      Варіант 18
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Завдання №2</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <p>
+        На заданому проміжку чисел [a,b] знайдіть добуток чисел, кратних 6.
+      </p>
+      <ion-item>
+        <ion-label position="floating">Ліва межа:</ion-label>
+        <ion-input type="number" id="left" value="1" #inputleft></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Права межа:</ion-label>
+        <ion-input type="number" id="right" value="5" #inputright></ion-input>
+      </ion-item>
+      <ion-button expand="block" (click)="calculate(inputleft.value, inputright.value)">Обчислити</ion-button>
+      <ion-item>
+        <p>Результат: {{result}}</p>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

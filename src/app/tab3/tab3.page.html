@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Лабораторна робота №1
+    </ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-title>
+      студентки групи КН-32
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+
+    <ion-title>
+      Лабзун Анни Михайлівни
+    </ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-title>
+      Варіант 18
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Завдання №3</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <p>
+        Згенерувати матрицю розміром NxN. Виокремити за допомогою кольору усі парні додатні елементи.
+      </p>
+
+      <ion-item>
+        <ion-label position="floating">N:</ion-label>
+        <ion-input type="number" id="n" value="3" #inputn></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" (click)="process(inputn.value)">Обчислити</ion-button>
+      <ion-item>
+        <ion-grid>
+          <ion-row *ngFor="let row of matrix">
+            <ion-col *ngFor="let element of row" [style.background-color]="getColor(element)">{{ element }}</ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

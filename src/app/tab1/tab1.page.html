@@ -1,0 +1,63 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Лабораторна робота №1
+    </ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-title>
+      студентки групи КН-32
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+
+    <ion-title>
+      Лабзун Анни Михайлівни
+    </ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-title>
+      Варіант 18
+    </ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark" menu="first"></ion-menu-button>
+    </ion-buttons>
+    <ion-title> Лабораторні роботи
+       </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Завдання №1</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <p>
+        Задано три числа. Знайти добуток тих з них, які більші 10 і менші 15.
+      </p>
+      <ion-item>
+        <ion-label position="floating">1 число:</ion-label>
+        <ion-input type="number" id="a" value="1" #inputa></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">2 число:</ion-label>
+        <ion-input type="number" id="b" value="2" #inputb></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">3 число:</ion-label>
+        <ion-input type="number" id="c" value="3" #inputc></ion-input>
+      </ion-item>
+      <ion-button expand="block" (click)="calculate(inputa.value, inputb.value, inputc.value)">Обчислити</ion-button>
+      <ion-item>
+        <p>Результат: {{result}}</p>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

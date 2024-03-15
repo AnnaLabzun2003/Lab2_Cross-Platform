@@ -1,0 +1,78 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Лабораторна робота №3
+    </ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-title>
+      студентки групи КН-32
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+
+    <ion-title>
+      Лабзун Анни Михайлівни
+    </ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-title>
+      Варіант 7
+    </ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark" menu="first"></ion-menu-button>
+    </ion-buttons>
+    <ion-title> Лабораторні роботи
+       </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-text>
+        Перелік студентів:
+        <ul>
+          <li>ПІБ студента.</li>
+          <li>Дата народження.</li>
+          <li>Адреса.</li>
+          <li>Телефон</li>
+        </ul>
+        <p>
+          Запит: Позначити кольором студентів, що мають однакову дату народження.
+        </p>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-text>Читання з JSON-файлу</ion-text>
+      <ion-button expand="block" (click)="load()">Завантажити</ion-button>
+
+      <ion-item button *ngFor="let item of data_users; let i = index" detail (click)="toggleDetails(i)">
+        <ion-label *ngIf="!showDetails[i]" text-wrap>
+          <p [ngStyle]="{'color': getPinkColor(item.birthdayDate)}">
+            <span>Прізвище: </span> {{ item.surname }}
+            <br><span>Ім'я: </span> {{ item.name }}
+            <br><span>По-батькові: </span> {{ item.fatherly }}
+          </p>
+        </ion-label>
+        <ion-text *ngIf="showDetails[i]">
+          <h2>День народження: </h2> {{ item.birthdayDate }}
+          <h2>Адреса: </h2> {{ item.address }}
+          <h2>Телефон: </h2> {{ item.phone }}
+        </ion-text>
+      </ion-item>
+      
+  </ion-card-content>
+  </ion-card>
+</ion-content>
